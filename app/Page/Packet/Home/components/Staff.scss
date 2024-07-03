@@ -1,0 +1,33 @@
+.PEGMJPPBKG {
+    position: relative;
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+    .AUOVCZWXJC {
+        padding: 16px;
+        max-width: 457px;
+        position: absolute;
+        left: 45%;
+        top: 70%;
+        transform: translate(-100%, -50%);
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.5);
+        .LWPRWUHQVM {
+            text-transform: uppercase;
+            color: #30237d;
+            font-weight: bold;
+            font-size: 34px;
+        }
+        .XWOOEZZMRB {
+            color: #30237d;
+        }
+        @media (max-width: 900px) {
+            padding: 16px;
+            width: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

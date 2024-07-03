@@ -1,0 +1,48 @@
+.OTVDQDSBKD {
+    background-color: #0e2c58;
+    @media (max-width: 1200px) {
+        padding: 16px;
+    }
+    .BFVSEVVLNN {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        max-width: 1060px;
+        margin: 0 auto;
+        img {
+            max-width: 100%;
+        }
+        .XMDJCPCXUL {
+            flex-basis: calc(40%);
+            @media (max-width: 1200px) {
+                flex-basis: calc(100%);
+            }
+        }
+        .NTLOOOYMXQ {
+            flex-basis: calc(60% - 16px);
+            @media (max-width: 1200px) {
+                flex-basis: calc(100%);
+            }
+            @media (max-width: 500px) {
+                iframe {
+                    width: 300px;
+                }
+            }
+        }
+        .SEMVBIFOIF {
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            padding-top: 16px;
+        }
+        .XYYRQYTFZD {
+            color: #fff;
+            font-weight: bold;
+            font-size: 18px;
+            padding-top: 16px;
+        }
+    }
+}

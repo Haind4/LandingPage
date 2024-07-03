@@ -1,0 +1,42 @@
+.IXPSRBIEPO {
+    max-width: 1060px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .EZPKZKDBCL {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-basis: calc(50% - 24px);
+        @media (max-width:1200px) {
+            padding: 16px;
+
+            flex-basis: calc(100%);
+        }
+        .DLAYKTXWHX {
+            text-align: center;
+            text-transform: uppercase;
+            color: #30237d;
+            font-weight: bold;
+            font-size: 33px;
+        }
+        .PXSGSKVUCM {
+            text-align: center;
+            color: #30237d;
+            font-size: 19px;
+        }
+    }
+    .AEEBAGSLBV {
+        margin-top: 46px;
+        flex-basis: calc(50%);
+        @media (max-width:1200px) {
+            padding: 16px;
+            flex-basis: calc(100%);
+        }
+        img{
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
+}
