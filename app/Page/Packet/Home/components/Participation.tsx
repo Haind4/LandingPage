@@ -9,7 +9,7 @@ function Participation() {
         { title: "Trường học", link: MedicSchool.src },
         { title: "Bệnh viện", link: MedicHopital.src },
         { title: "Bất động sản", link: MedicLand.src },
-        { title: "Thẩm mĩ", link: MedicDSC.src },
+        { title: "Thẩm mỹ", link: MedicDSC.src },
 
     ]
     return (

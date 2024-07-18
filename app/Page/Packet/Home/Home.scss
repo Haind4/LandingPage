@@ -16,7 +16,6 @@
         background: linear-gradient(to left, #0e2c58 0%, #1a4f8e 100%);
         .ATSYHLNZMN {
             padding: 16px;
-            max-width: 1200px;
             margin: 0 auto;
             font-size: 18px;
             display: flex;
@@ -26,7 +25,7 @@
                 flex-wrap: wrap;
                 flex-basis: calc(75%);
                 .PIHHDXKNRI {
-                    padding: 8px;
+                    padding: 24px;
                     cursor: pointer;
                     color: #fff;
                     &:hover {
@@ -38,7 +37,7 @@
 
             .GYKKQDFKRJ {
                 flex-basis: calc(20%);
-                padding: 8px;
+                padding: 24px;
                 input {
                     text-indent: 5px;
                     color: #fff;
@@ -51,7 +50,7 @@
                     display: flex;
                     position: relative;
                     .RCPNICPVGE {
-                        right: 20px;
+                        right: 20%;
                         position: absolute;
                     }
                 }

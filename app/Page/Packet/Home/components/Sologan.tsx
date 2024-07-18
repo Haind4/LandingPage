@@ -20,8 +20,7 @@ function Sologan() {
             </div>
             <div className='NWAWOJFQYV'>
                 <div className='SYELXLPMXW'>
-                    <span>“Trao Giá Trị, Mang Tới Cuộc Sống Tốt Đẹp Hơn Cho Tất Cả Mọi Người” – Tập đoàn MHolding </span>
-                    giá trị sức khỏe, sắc đẹp tới khách hàng. Giúp khách hàng đẹp hơn, khỏe hơn thông qua đó mang tới sự tự tin, cuộc sống hạnh phúc.
+                    <span>“Trao Giá Trị, Mang Tới Cuộc Sống Tốt Đẹp Hơn Cho Tất Cả Mọi Người”  </span>
                 </div>
             </div>
         </>

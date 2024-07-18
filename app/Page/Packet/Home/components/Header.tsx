@@ -51,7 +51,6 @@ function Header() {
                             <li>{item?.title}</li>
                         )
                     })}
-
                 </ul>
             </section>
         </div>

@@ -28,6 +28,7 @@
     .AEEBAGSLBV {
         flex-basis: calc(50%);
         @media (max-width: 1200px) {
+            text-align: center;
             flex-basis: calc(100%);
             padding: 16px;
         }
