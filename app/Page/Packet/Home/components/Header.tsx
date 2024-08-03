@@ -2,14 +2,16 @@ import React from 'react'
 import '../Home.scss';
 import { SearchOutlined } from '@ant-design/icons';
 import logo from '../../Images/abcss.png'
+import Link from 'next/link';
 function Header() {
     const dataMenu = [
-        { title: 'TRANG CHỦ' },
-        { title: 'GIỚI THIỆU' },
-        { title: 'CÔNG TY THÀNH VIÊN' },
-        { title: 'LĨNH VỰC KINH DOANH' },
-        { title: 'TUYỂN DỤNG' },
-        { title: 'LIÊN HỆ' },
+        { title: 'TRANG CHỦ', link: '/' },
+        { title: 'TIN TỨC', link: '/tin-tuc' },
+        { title: 'GIỚI THIỆU', link: '#' },
+        { title: 'CÔNG TY THÀNH VIÊN', link: '#' },
+        { title: 'LĨNH VỰC KINH DOANH', link: '#' },
+        { title: 'TUYỂN DỤNG', link: '#' },
+        { title: 'LIÊN HỆ', link: '#' },
     ]
     return (
         <div>
@@ -22,7 +24,9 @@ function Header() {
                         {dataMenu?.map((item) => {
                             return (
                                 <div className='PIHHDXKNRI'>
-                                    {item?.title}
+                                    <Link href={item?.link || '#'}>
+                                        {item?.title}
+                                    </Link>
                                 </div>
                             )
                         })}

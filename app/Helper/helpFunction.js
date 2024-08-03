@@ -33,6 +33,10 @@ export function urlParseParams(objectParse = {}) {
     }
   return str.join("&");
 }
+export const paramsFooter = () => {
+  const params = {};
+  return params;
+};
 
 export function formatMoney(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -45,6 +49,27 @@ export function formatPhoneNumber(phoneNumberString) {
     return "" + match[1] + "." + match[2] + "." + match[3];
   }
   return null;
+}
+export function replaceDescription(description, type = "base_url_v1") {
+  let descriptionNew = description;
+  // if (descriptionNew) {
+  //   descriptionNew = descriptionNew.replaceAll(
+  //     "/uploads",
+  //     `${getUrlDevLinkV3(type)}/uploads`
+  //   );
+  //   descriptionNew = descriptionNew.replaceAll(
+  //     "oembed url",
+  //     'iframe class="GLBQFOPKRG" src'
+  //   );
+  //   descriptionNew = descriptionNew.replaceAll(`width="1000"`, `width="1200"`);
+  //   descriptionNew = descriptionNew.replaceAll("oembed", "iframe");
+  //   descriptionNew = descriptionNew.replaceAll(
+  //     'rel="noopener noreferrer"',
+  //     'rel="nofollow"'
+  //   );
+  // }
+
+  return descriptionNew;
 }
 
 export function urlBaseGetImage(url) {
@@ -96,4 +121,12 @@ export function isJsonObject(str) {
   } catch (e) {
     return {};
   }
+
+} export function getUrlDevLinkV3(type) {
+  let URL_GET_FROM_ENV = "http://localhost:1337/api/";
+  if (type === "mholding") {
+    URL_GET_FROM_ENV = process?.env?.NEXT_PUBLIC_DEV_LINK_IP;
+  }
+
+  return URL_GET_FROM_ENV;
 }

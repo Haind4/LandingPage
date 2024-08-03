@@ -2,6 +2,7 @@ import axios from "axios";
 import { footWeb, headWeb } from "../app/Constant/config_global";
 import { wrapper } from "../app/Store/store";
 import Home from '../app/Page/Packet/Home/Home.tsx'
+import { paramsFooter } from "../app/Helper/helpFunction.js";
 const Index = (props) => {
   const InformationWeb = props?.InformationWeb
   const url = props?.url
@@ -18,19 +19,18 @@ const Index = (props) => {
 export default wrapper.withRedux(Index);
 
 export async function getServerSideProps({ req, res }) {
-  const url = process?.env?.NEXT_PUBLIC_DEV_LINK_IP || "http://10.90.9.30:8050/api"
-  let InformationWeb = {}
-
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
-
-  return {
+  let InformationWeb = {
+    title_seo: 'Trang chủ',
+    description_seo: 'Trang chủ MHolding',
+  }
+  res.setHeader("Cache-Control", "public, s-maxage=10, stale-while-revalidate=59");
+  let dataProps = {
     props: {
-      url: url,
-      InformationWeb: InformationWeb
+      InformationWeb: InformationWeb,
+      ...paramsFooter,
     },
   }
+  return dataProps
+
 }
 

@@ -30,7 +30,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/Page/Packet/News/components/NewsContent.js"  ],
   "exclude": [
     "node_modules"
   ]
