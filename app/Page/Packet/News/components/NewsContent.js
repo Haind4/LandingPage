@@ -59,7 +59,7 @@ function NewsContent() {
                             </div>
                             <div className='ESBPJTXTQX'>
                                 <Link href={`/chi-tiet-tin-tuc/${item?.id}`}>
-                                    {item?.metadata?.title}
+                                    {item?.title}
                                 </Link>
                             </div>
                             <div className='RLBANWHNKB' dangerouslySetInnerHTML={{ __html: replaceDescription(item?.metadata?.content) }}></div>
@@ -68,7 +68,7 @@ function NewsContent() {
                 </div>
             )}
             <Pagination
-                defaultCurrent={1}
+                defaultCurrent={0}
                 total={data?.total}
                 pageSize={params.limit}
                 onChange={(page) => handlePage(page)}

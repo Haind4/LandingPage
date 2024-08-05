@@ -34,7 +34,7 @@ function Header() {
                     </div>
                     <div className='GYKKQDFKRJ'>
                         <div className='RPNQUUHOBF'>
-                            <input />
+                            <input className='HIOXDHBUGL' />
                             <div className='RCPNICPVGE'>
                                 <SearchOutlined style={{ color: '#fff' }} />
                             </div>
