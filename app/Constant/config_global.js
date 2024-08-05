@@ -18,7 +18,7 @@ export const stripHtml = (html) => {
 }
 
 export const headWeb = (InformationWeb, url, detail = null) => {
-  let title = "MHolding"
+  let title = InformationWeb?.title_seo
   let description = InformationWeb?.description_seo
   let favicon = urlBaseGetImage(favi.src)
   let image = urlBaseGetImage(InformationWeb?.image3)

@@ -24,10 +24,16 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex-basis: calc(75%);
-                .PIHHDXKNRI {
-                    padding: 24px;
-                    cursor: pointer;
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
                     color: #fff;
+                }
+                .PIHHDXKNRI {
+                    padding: 16px;
+                    cursor: pointer;
+
                     &:hover {
                         border-radius: 20px;
                         border: 1px solid #fff;
@@ -62,9 +68,6 @@
     }
 }
 
-
-
-
 .top-nav {
     display: none;
     flex-direction: row;
@@ -75,7 +78,7 @@
     color: #fff;
     height: 50px;
     padding: 1em;
-    @media (max-width:1200px) {
+    @media (max-width: 1200px) {
         display: flex;
     }
 }
