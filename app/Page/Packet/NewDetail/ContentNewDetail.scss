@@ -8,13 +8,17 @@
     }
     .COSVFIRFRK {
         img {
+            background-position: 100% 100%;
+            object-fit: contain;
             justify-content: center;
         }
     }
 }
+
 img {
     border-radius: 12px;
     text-align: center;
+    object-fit: contain;
     width: 100%;
 }
 .HTLPGXEDDH {

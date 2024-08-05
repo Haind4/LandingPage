@@ -5,7 +5,6 @@ import API from "../../../Service/API";
 import { replaceDescription } from '../../../Helper/helpFunction';
 import moment from 'moment';
 import { Spin } from 'antd';
-
 function ContentNewDetail() {
     const router = useRouter();
     const id = router?.query.slug[0] || '';
@@ -30,7 +29,7 @@ function ContentNewDetail() {
 
     return (
         <div className='ZUFAHRYOQS'>
-            <h1>{detail?.metadata?.title}</h1>
+            <h1>{detail?.title}</h1>
             <div className='HTLPGXEDDH'>
                 {moment(detail?.created_at).format('DD/MM/YYYY') || ''}
             </div>
