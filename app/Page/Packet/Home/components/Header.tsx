@@ -53,7 +53,7 @@ function Header() {
                 <ul className="menu">
                     {dataMenu?.map((item) => {
                         return (
-                            <li>{item?.title}</li>
+                            <li><Link href={item?.link}>{item?.title}</Link></li>
                         )
                     })}
                 </ul>
