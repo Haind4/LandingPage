@@ -9,10 +9,20 @@
         .QLDDXPYIZQ {
             padding-bottom: 20px;
             flex-basis: calc(25% - 16px);
+            @media (max-width:1200px) {
+                padding: 16px;
+                flex-basis: calc(50%);
+            }
+            @media (max-width: 700px) {
+                flex-basis: calc(100%);
+            }
             img {
                 object-fit: contain;
                 width: 100%;
                 border-radius: 8px;
+                @media (max-width:1200px) {
+                        width: 280px;
+                }
             }
         }
         .ESBPJTXTQX {
