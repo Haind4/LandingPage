@@ -23,11 +23,12 @@ function Header() {
                     <div className='YBVTSWUPUJ'>
                         {dataMenu?.map((item) => {
                             return (
-                                <div className='PIHHDXKNRI'>
-                                    <Link href={item?.link || '#'}>
+                                <Link href={item?.link || '#'}>
+                                    <div className='PIHHDXKNRI'>
                                         {item?.title}
-                                    </Link>
-                                </div>
+                                    </div>
+                                </Link>
+
                             )
                         })}
                     </div>
@@ -57,7 +58,7 @@ function Header() {
                     })}
                 </ul>
             </section>
-        </div>
+        </div >
     )
 }
 

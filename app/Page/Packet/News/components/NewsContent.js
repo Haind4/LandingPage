@@ -1,57 +1,80 @@
-import React, { useEffect, useState } from 'react'
-import './NewsContent.scss'
-import MA20967 from '../../Images/MA20967.png';
-import API from "../../../../Service/API";
-import { Pagination } from 'antd';
+import React, { useEffect, useState } from 'react';
+import './NewsContent.scss';
+import API from '../../../../Service/API';
 import moment from 'moment';
-import { urlBaseGetImage } from '../../../../Helper/helpFunction';
+import { replaceDescription, urlBaseGetImage } from '../../../../Helper/helpFunction';
 import Link from 'next/link';
+import { Pagination } from 'antd';
+
 function NewsContent() {
     const [data, setData] = useState([]);
-    const [params, useParams] = useState({
-        populate: "*",
-        "pagination[page]": 1,
-        "pagination[pageSize]": 8,
-        "sort[0]": "updatedAt:desc",
-        // 'sort[0]': 'id:desc',
+    const [loading, setLoading] = useState(false);
+    const [params, setParams] = useState({
+        pretty: true,
+        skip: 0,
+        limit: 8,
+        read_key: 'cA0Z6KOVMrBkCvo4wv7fLG3pP3tOgJ6VCo3auXVLvlLRoWppRJ',
+        depth: 1,
+        props: 'slug,title,metadata,id,created_at'
     });
 
+    const handlePage = (page) => {
+        setParams({
+            ...params,
+            skip: (page - 1) * params.limit,
+        });
+    };
+
     const fetch = async () => {
-        const res = await API.News.getNews(params);
-        if (res?.status === 200) {
-            setData(res?.data?.data);
+        setLoading(true);
+        try {
+            const res = await API.News.getNews(params);
+            if (res?.status === 200) {
+                setData(res?.data);
+            }
+        } catch (error) {
+            console.error('Failed to fetch news:', error);
+        } finally {
+            setLoading(false);
         }
     };
 
     useEffect(() => {
         fetch();
-    }, []);
+    }, [params]);
+
     return (
         <div className='WJFPXMDEUL'>
-            <div className='HLKBQRPSKA'>
-                {data?.map((item, index) => {
-                    return <div className='QLDDXPYIZQ'>
-                        <img src={urlBaseGetImage(item?.attributes?.image?.data?.attributes?.url)} />
-                        <div className='MJKEUYQAQD'>
-                            {moment(item.attributes?.updatedAt).format('DD/MM/YYYY')}
+            {loading ? (
+                <div>Loading...</div>
+            ) : (
+                <div className='HLKBQRPSKA'>
+                    {data?.objects?.map((item, index) => (
+                        <div key={item.id} className='QLDDXPYIZQ'>
+                            {item?.metadata?.image?.url && (
+                                <img src={urlBaseGetImage(item.metadata.image.url)} alt={item.metadata.title} />
+                            )}
+                            <div className='MJKEUYQAQD'>
+                                {moment(item?.created_at).format('DD/MM/YYYY') || 'MM'}
+                            </div>
+                            <div className='ESBPJTXTQX'>
+                                <Link href={`/chi-tiet-tin-tuc/${item?.id}`}>
+                                    {item?.metadata?.title}
+                                </Link>
+                            </div>
+                            <div className='RLBANWHNKB' dangerouslySetInnerHTML={{ __html: replaceDescription(item?.metadata?.content) }}></div>
                         </div>
-                        <div className='ESBPJTXTQX'>
-                            <Link href={`/chi-tiet-tin-tuc/${item?.id}`}>
-                                {item.attributes?.tieude}
-                            </Link>
-                        </div>
-                    </div>
-                })}
-                <div className='QLDDXPYIZQ'>
+                    ))}
                 </div>
-                <div className='QLDDXPYIZQ'>
-                </div>
-                <div className='QLDDXPYIZQ'>
-                </div>
-                <Pagination defaultCurrent={1} total={50} />
-            </div>
+            )}
+            <Pagination
+                defaultCurrent={1}
+                total={data?.total}
+                pageSize={params.limit}
+                onChange={(page) => handlePage(page)}
+            />
         </div>
-    )
+    );
 }
 
-export default NewsContent
+export default NewsContent;

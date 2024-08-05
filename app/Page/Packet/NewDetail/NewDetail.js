@@ -7,7 +7,7 @@ function NewDetail() {
     return (
         <div className='EISMIEJITG'>
             <Header />
-            <Breadcump />
+            {/* <Breadcump /> */}
             <ContentNewDetail />
             <Footer />
         </div>

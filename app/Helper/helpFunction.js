@@ -123,7 +123,7 @@ export function isJsonObject(str) {
   }
 
 } export function getUrlDevLinkV3(type) {
-  let URL_GET_FROM_ENV = "http://localhost:1337/api/";
+  let URL_GET_FROM_ENV = "https://api.cosmicjs.com/v3/buckets/mholding-landing-production/";
   if (type === "mholding") {
     URL_GET_FROM_ENV = process?.env?.NEXT_PUBLIC_DEV_LINK_IP;
   }

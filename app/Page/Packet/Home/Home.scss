@@ -24,12 +24,16 @@
                 display: flex;
                 flex-wrap: wrap;
                 flex-basis: calc(75%);
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    color: #fff;
+                }
                 .PIHHDXKNRI {
-                    padding: 24px;
+                    padding: 16px;
                     cursor: pointer;
-                    a {
-                        color: #fff;
-                    }
+
                     &:hover {
                         border-radius: 20px;
                         border: 1px solid #fff;

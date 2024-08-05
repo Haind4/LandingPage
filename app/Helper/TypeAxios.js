@@ -11,7 +11,7 @@ let assignObjectHeader = {
 export async function axiosPOST(type = '', Url, param = {}, header = {}) {
   let URL_BASE_ADMIN = getUrlDevLinkV3(type)
   Object.assign(header, assignObjectHeader);
- 
+
   return axios.post(URL_BASE_ADMIN + Url, param, { headers: "fcbc389fda5764267d46d05cd57a357b6bf91aa55387ced9621d40eeab24826c57a5e4e271927e02e12d6bc757a5f5ea3b4806dbe150f6cea769d26fd04311de19d9ac5f96595769f0e87358b0e37c74e77a04652aaf3c46e2e7b8ac4471635987f4583c97c70196c9c16e2a8cffe615e3bd176f218ca1423b93b2feb16ee205" }).then(res => {
     if (res?.data?.status) {
       // if (!res?.data?.skipMessage) {
@@ -41,10 +41,10 @@ export async function axiosPOST(type = '', Url, param = {}, header = {}) {
 
 /*axit get*/
 export async function axiosGET(type, Url, header = {}) {
-  let URL_BASE_ADMIN = getUrlDevLinkV3(type)
+  let URL_GET_FROM_ENV = getUrlDevLinkV3(type)
   Object.assign(header, assignObjectHeader);
 
-  return (axios.get(URL_BASE_ADMIN + Url, { headers: header }).then(res => {
+  return (axios.get(URL_GET_FROM_ENV + Url, { headers: header }).then(res => {
     return res;
   }).catch(err => {
     if (err?.response?.data?.message) {
@@ -68,7 +68,7 @@ export async function axiosGET(type, Url, header = {}) {
 export async function axiosPUT(type = '', Url, param = {}, header = {}) {
   let URL_BASE_ADMIN = getUrlDevLinkV3(type)
   Object.assign(header, assignObjectHeader);
- 
+
   return axios.put(URL_BASE_ADMIN + Url, param, { headers: header }).then(res => {
     if (res?.data?.status) {
       // if (!res?.data?.skipMessage) {
